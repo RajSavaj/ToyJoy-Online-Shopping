@@ -1,0 +1,155 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMaster.master.cs"
+    Inherits="Admin_AdminMaster" %>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="js/jquery.min.js"> </script>
+
+    <!-- Mainly scripts -->
+
+    <script type="text/javascript" src="js/jquery.metisMenu.js"></script>
+
+    <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <link href="css/custom.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript" src="js/screenfull.js"></script>
+
+    <script type="text/javascript">
+		$(function () {
+			$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
+
+			if (!screenfull.enabled) {
+				return false;
+			}
+
+			
+
+			$('#toggle').click(function () {
+				screenfull.toggle($('#container')[0]);
+			});
+			
+
+			
+		});
+    </script>
+
+    <!----->
+    <!--pie-chart--->
+
+    <script src="js/pie-chart.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#demo-pie-1').pieChart({
+                barColor: '#3bb2d0',
+                trackColor: '#eee',
+                lineCap: 'round',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-2').pieChart({
+                barColor: '#fbb03b',
+                trackColor: '#eee',
+                lineCap: 'butt',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-3').pieChart({
+                barColor: '#ed6498',
+                trackColor: '#eee',
+                lineCap: 'square',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+           
+        });
+
+    </script>
+
+    <!--skycons-icons-->
+
+    <script type="text/javascript" src="js/skycons.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="wrapper">
+        <form id="form1" runat="server">
+        <nav class="navbar-default navbar-static-top" role="navigation">
+             <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               <h1> <a class="navbar-brand" href="index.html">ADMIN</a></h1>         
+			   </div>
+			 <div class=" border-bottom">
+            <div class="clearfix"> </div>
+           </div>
+	  
+      <div class="navbar-default sidebar" role="navigation">
+       <div class="sidebar-nav navbar-collapse">
+          <ul class="nav" id="side-menu">		
+      
+      <li><a href="Users.aspx"class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label"> Show User</span> </a></li>
+      <li><a href="Category.aspx" class=" hvr-bounce-to-right"><i class="fa fa-picture-o nav_icon"></i> <span class="nav-label">Category</span> </a></li>
+      <li><a href="Sub_Category.aspx" class=" hvr-bounce-to-right"><i class="fa fa-th nav_icon"></i> <span class="nav-label">Sub Category</span> </a></li>
+      <li><a href="Items.aspx" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label">Show item</span> </a></li>
+      <li><a href="Vieworder.aspx" class=" hvr-bounce-to-right"><i class="fa fa-list nav_icon"></i> <span class="nav-label">View order</span></a></li>
+      <li><a href="checkoutdetail.aspx"class=" hvr-bounce-to-right"><i class="fa fa-list nav_icon"></i> <span class="nav-label">Checkout Detail</span></a></li>
+     <li><a href="Showfeedback.aspx" class=" hvr-bounce-to-right"><i class="fa fa-cog nav_icon"></i> <span class="nav-label">Show Feedback</span></a></li>
+     <li><a href="Default.aspx" class=" hvr-bounce-to-right"><i class="fa fa-cog nav_icon"></i> <span class="nav-label">Logout</span></a></li>
+         </ul>
+       </div>
+       </div>
+     </nav>
+     <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="content-main">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                <div class="copy">
+                    <p>
+                        &copy; 2018. All Rights Reserved | Design by <a href="http://w3layouts.com/"
+                            target="_blank">Mehta Mansi & Rathod Harshita</a>
+                    </p>
+                </div>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.nicescroll.js"></script>
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+
+    <!--//scrolling js-->
+
+    <script type="text/javascript" src="js/bootstrap.min.js"> </script>
+
+</body>
+</html>
